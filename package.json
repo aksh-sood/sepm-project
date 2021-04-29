@@ -11,7 +11,9 @@
     "watch:scss": "onchange --npm run scss",
     "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
     "clean": "rimraf dist",
-    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts* dist/fonts"
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts* dist/fonts",
+    "deploy": "npm run build && firebase deploy"
+
   },
   "repository": {
     "type": "git",
@@ -33,4 +35,5 @@
     "jquery": "^3.3.1",
     "popper.js": "^1.12.9"
   }
+  
 }

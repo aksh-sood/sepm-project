@@ -26,3 +26,4 @@ $('#logmod').click(function(){
 
 
 });
+console.log(firebase)
