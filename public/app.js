@@ -37,54 +37,28 @@ auth.onAuthStateChanged(user => {
 
 const db = firebase.firestore();
 
-const createThing = document.getElementById('createThing');
-const thingsList = document.getElementById('thingsList');
-
+const pname = document.getElementById('namepatient');
+const pgender = document.getElementById('pgender');
+const time = document.getElementById('time');
+const date = document.getElementById('date');
+const adddata = document.getElementById('bookingbutton');
 
 let thingsRef;
 let unsubscribe;
 
 auth.onAuthStateChanged(user => {
 
-    if (user) {
+  
+// Database Reference
+    thingsRef = db.collection('patient')
+    adddata.onclick = () => {
 
-        // Database Reference
-        thingsRef = db.collection('things')
-
-        createThing.onclick = () => {
-
-            const { serverTimestamp } = firebase.firestore.FieldValue;
-
-            thingsRef.add({
-                uid: user.uid,
-                name: faker.commerce.productName(),
-                createdAt: serverTimestamp()
-            });
-        }
-
-
-        // Query
-        unsubscribe = thingsRef
-            .where('uid', '==', user.uid)
-            .orderBy('createdAt') // Requires a query
-            .onSnapshot(querySnapshot => {
-                
-                // Map results to an array of li elements
-
-                const items = querySnapshot.docs.map(doc => {
-
-                    return `<li>${doc.data().name}</li>`
-
-                });
-
-                thingsList.innerHTML = items.join('');
-
-            });
-
-
-
-    } else {
-        // Unsubscribe when the user signs out
-        unsubscribe && unsubscribe();
+    thingsRef.add({
+        PatientName: pname,
+        Date: date,
+        Time: time,
+        Gender: pgender
+        });
     }
+
 });

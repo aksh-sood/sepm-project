@@ -10,6 +10,9 @@
 <link rel="stylesheet" href="one.css">
 <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
 <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 
 <head>
     <title>SRM HOSPITAL</title>
@@ -303,8 +306,8 @@
                                     
                                     <div class="btn-group" role="group" aria-label="sect">
                                         <label for="Gender" class="col-md-5 col-form-label"><h5>Gender</h5></label>
-                                        <button type="button" class="btn btn-success form-label offset-5">MALE</button>
-                                        <button type="button" class="btn btn-danger form-label">FEMALE</button>
+                                        <button type="button" id="pgender" class="btn btn-success form-label offset-5">MALE</button>
+                                        <button type="button" id="pgender" class="btn btn-danger form-label">FEMALE</button>
                                         
                                       </div>
                                 </div>
@@ -319,13 +322,13 @@
                                         <input type="date" class="form-control" id="date" name="date" placeholder="Date">
                                     </div>
                                     <div class="col-5 col-md-4">
-                                        <input type="time" class="form-control" id="date" name="date" placeholder="Time">
+                                        <input type="time" class="form-control" id="time" name="date" placeholder="Time">
                                     </div>
                                 </div>
                                 <div class="form-group row">
                                     <div class=" col-md-7 text-right">
                                         <button type="submit" class="btn btn-secondary">Cancel</button>
-                                        <button type="submit" class="btn btn-primary">Reserve</button>
+                                        <button id = "bookingbutton" class="btn btn-success">Reserve</button>
                                     </div>
                                 </div>
                             </dl>

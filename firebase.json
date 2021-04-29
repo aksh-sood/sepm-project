@@ -9,10 +9,29 @@
   },
   "emulators": {
     "hosting": {
-      "port": 5000
+      "port": 5500
     },
     "ui": {
       "enabled": true
     }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run lite",
+    "lite": "lite-server",
+    "scss": "node-sass ",
+    "watch:scss": "onchange --npm run scss",
+    "watch:all": "parallelshell \"npm run watch:scss\" \"npm run lite\"",
+    "clean": "rimraf dist",
+    "copyfonts": "copyfiles -f node_modules/font-awesome/fonts* dist/fonts",
+    "deploy": "npm run build && firebase deploy"
+
+  },
+  "dependencies": {
+    "bootstrap": "^4.0.0",
+    "bootstrap-social": "^5.1.1",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.12.9"
   }
 }
